@@ -2,9 +2,10 @@ import { Veiculo } from "./Veiculo";
 import prompt from "prompt-sync";
 
 const teclado = prompt();
-
-console.log('Criação de veículo');
+console.log("+------------------+")
+console.log('|Criação de veículo|');
 const carro: Veiculo = criaVeiculo();
+console.log("+------------------+")
 
 while(true){
     console.log("########### MENU ###########");
@@ -49,7 +50,12 @@ function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
     veiculo.marca = teclado('Marca: ');
     veiculo.modelo = teclado('Modelo: ');
+    veiculo.cor = teclado('Cor: ');
     veiculo.potencia = +teclado('Potência: ');
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
+    veiculo.marca = teclado('↳Marca: ');
+    veiculo.modelo = teclado('↳Modelo: ');
+    veiculo.potencia = +teclado('↳Potência: ');
+    veiculo.numeroMarchas = +teclado('↳Número de marchas: ');
     return veiculo;
 }
