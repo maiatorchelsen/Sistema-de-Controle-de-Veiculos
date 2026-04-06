@@ -13,6 +13,7 @@ while(true){
     console.log("3 - Subir marcha");
     console.log("4 - Descer marcha");
     console.log("5 - Imprimir dados do veículo");
+    console.log("6 - Dar ré")
     console.log("0 - Sair");
 
     const opcao = +teclado('Escolha uma opção: ');
@@ -30,6 +31,16 @@ while(true){
 }
 
 console.table(carro);
+
+function dar_re(veiculo: Veiculo): void{
+    if (veiculo.velocidade === 0 || veiculo.marchaAtual === -1) {
+        veiculo.marchaAtual = -1; 
+        veiculo.velocidade += veiculo.potencia * 0.05; 
+        console.log(`Dando ré... Velocidade atual: ${veiculo.velocidade.toFixed(2)}`);
+    } else {
+        console.log("⚠️ Reduza a velocidade para 0 antes de dar ré!");
+    }
+}
 
 function acelerar(veiculo: Veiculo): void{
     if(veiculo.marchaAtual != 0){
