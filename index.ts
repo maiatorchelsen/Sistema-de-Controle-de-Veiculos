@@ -38,6 +38,12 @@ function acelerar(veiculo: Veiculo): void{
     veiculo.velocidade += veiculo.potencia*0.1;
     console.log(veiculo.velocidade);
 }}
+function frear(veiculo: Veiculo): void{
+    if(veiculo.velocidade > 0){
+        veiculo.velocidade -= veiculo.potencia*0.1;
+        console.log(veiculo.velocidade);
+    }
+}
 
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
