@@ -41,6 +41,11 @@ function acelerar(veiculo: Veiculo): void{
 
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
+    veiculo.marca = teclado('Marca: ');
+    veiculo.modelo = teclado('Modelo: ');
+    veiculo.cor = teclado('Cor: ');
+    veiculo.potencia = +teclado('Potência: ');
+    veiculo.numeroMarchas = +teclado('Número de marchas: ');
     veiculo.marca = teclado('↳Marca: ');
     veiculo.modelo = teclado('↳Modelo: ');
     veiculo.potencia = +teclado('↳Potência: ');
