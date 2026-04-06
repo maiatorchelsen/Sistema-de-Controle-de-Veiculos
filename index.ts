@@ -8,14 +8,15 @@ const carro: Veiculo = criaVeiculo();
 console.log("+------------------+")
 
 while(true){
-    console.log("+------------ MENU ------------+");
-    console.log("|1 - Acelerar                  |");
-    console.log("|2 - Frear                     |");
-    console.log("|3 - Subir marcha              |");
-    console.log("|4 - Descer marcha             |");
-    console.log("|5 - Imprimir dados do veículo |");
-    console.log("|0 - Sair                      |");
-    console.log("+------------------------------+");
+    console.log("########### MENU ###########");
+    console.log("Veículo: " + carro.marca + " " + carro.modelo);
+    console.log("1 - Acelerar");
+    console.log("2 - Frear");
+    console.log("3 - Subir marcha");
+    console.log("4 - Descer marcha");
+    console.log("5 - Parar veículo");
+    console.log("6 - Imprimir dados do veículo");
+    console.log("0 - Sair");
 
     const opcao = +teclado('Escolha uma opção: ');
     if(opcao === 0){
@@ -38,6 +39,12 @@ function acelerar(veiculo: Veiculo): void{
     veiculo.velocidade += veiculo.potencia*0.1;
     console.log(veiculo.velocidade);
 }}
+function frear(veiculo: Veiculo): void{
+    if(veiculo.velocidade > 0){
+        veiculo.velocidade -= veiculo.potencia*0.1;
+        console.log(veiculo.velocidade);
+    }
+}
 
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
